@@ -95,5 +95,5 @@ from langchain.chains import create_retrieval_chain
 retriever = vector.as_retriever()
 retrieval_chain = create_retrieval_chain(retriever, document_chain)
 
-response = retrieval_chain.invoke({"input": "사업추진체계에 대해 알려줘"})
+response = retrieval_chain.invoke({"input": "사업추진체계가 어떻게 되는지 알려줘"})
 print(response["answer"])
