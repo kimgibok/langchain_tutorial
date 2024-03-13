@@ -22,3 +22,6 @@ you : [0, 0, 1, 0]
 me : [0, 0, 0, 1]
 
 다량의 데이터로 학습 -> 숫자들이 의미를 갖게 됨
+
+## langchain 참고 사이트
+https://python.langchain.com/docs/expression_language/cookbook/
