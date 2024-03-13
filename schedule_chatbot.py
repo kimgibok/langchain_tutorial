@@ -1,3 +1,5 @@
+# 일정관리 AI챗봇 
+# 2024-03-13 by kimgibok
 # 버튼 2개
 # 일정추가, 일정관리
 
@@ -35,6 +37,7 @@ want_to = """너는 아래 내용을 기반으로 일정을 관리해주는 챗�
 content
 {}
 """
+# 파일 일정 읽는 함수
 def open_file():
     with open("content.txt",'r') as f:
         content = f.read()
@@ -46,9 +49,10 @@ def add_schedule_to_file(date, event):
         file.write(f"{date}: {event}\n")
         
 
+# 일정
 content = open_file()
 
-
+# 인터페이스
 st.header("AI 기반 일정 관리 챗봇")
 
 # 일정 추가 입력 폼
@@ -60,7 +64,7 @@ with st.form("schedule_form"):
         add_schedule_to_file(date, event)
         st.success(f"일정 '{event}'가 {date}에 추가되었습니다.")
 
-        
+# 일정 관리 챗봇        
 if "messages" not in st.session_state:  # session state는 실행될때만 모두가 재실행되기때문에 저장할 것을 지정해줌
     st.session_state["messages"] = [ChatMessage(role="assistant", content="안녕하세요! 일정을 관리해 주는 챗봇입니다 어떤 걸 도와드릴까요?")]
 
